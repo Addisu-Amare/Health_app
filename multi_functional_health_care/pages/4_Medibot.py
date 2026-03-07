@@ -20,7 +20,7 @@ load_dotenv(find_dotenv())
 nest_asyncio.apply()
 
 st.sidebar.markdown("<h2 style='color: #ffffff;'>📌 Description</h2>", unsafe_allow_html=True)
-image_path = Path(__file__).parent / "utils" / "ph2.jpg"
+image_path = Path(__file__).parent / "utils" / "https://github.com/Addisu-Amare/Health_app/blob/main/multi_functional_health_care/utils/ph2.jpg"
 
 # Check if the file exists before trying to display it
 if image_path.exists():
@@ -137,5 +137,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
