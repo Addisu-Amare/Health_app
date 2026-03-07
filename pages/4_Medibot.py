@@ -143,28 +143,28 @@ def save_user_vectorstore(vectorstore, is_amharic=False):
         save_path = os.path.join(USER_UPLOADS_PATH, "user_docs.faiss")
     vectorstore.save_local(save_path)
 
-def combine_vectorstores(primary_db, secondary_db):
-    """
-    Combine two vectorstores safely
+# def combine_vectorstores(primary_db, secondary_db):
+#     """
+#     Combine two vectorstores safely
     
-    Args:
-        primary_db: The main vectorstore
-        secondary_db: The secondary vectorstore to merge into primary
+#     Args:
+#         primary_db: The main vectorstore
+#         secondary_db: The secondary vectorstore to merge into primary
     
-    Returns:
-        Combined vectorstore
-    """
-    try:
-        # Check if secondary_db exists and has documents (excluding initial placeholder)
-        if secondary_db is not None and hasattr(secondary_db, 'index_to_docstore_id'):
-            if len(secondary_db.index_to_docstore_id) > 1:  # Has actual documents
-                # Merge secondary into primary
-                primary_db.merge_from(secondary_db)
-                print(f"✅ Merged {len(secondary_db.index_to_docstore_id) - 1} documents from secondary store")
-    except Exception as e:
-        print(f"⚠️ Warning: Could not merge vectorstores: {str(e)}")
+#     Returns:
+#         Combined vectorstore
+#     """
+#     try:
+#         # Check if secondary_db exists and has documents (excluding initial placeholder)
+#         if secondary_db is not None and hasattr(secondary_db, 'index_to_docstore_id'):
+#             if len(secondary_db.index_to_docstore_id) > 1:  # Has actual documents
+#                 # Merge secondary into primary
+#                 primary_db.merge_from(secondary_db)
+#                 print(f"✅ Merged {len(secondary_db.index_to_docstore_id) - 1} documents from secondary store")
+#     except Exception as e:
+#         print(f"⚠️ Warning: Could not merge vectorstores: {str(e)}")
     
-    return primary_db
+#     return primary_db
 
 
 
@@ -552,5 +552,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
