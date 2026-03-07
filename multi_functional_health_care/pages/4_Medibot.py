@@ -29,7 +29,7 @@ else:
     st.sidebar.warning("Image not found")
     # Optional: Show the path for debugging
     st.sidebar.write(f"Looking for image at: {image_path}")
-st.sidebar.image("utils/ph2.jpg", use_container_width=True)
+st.sidebar.image("https://github.com/Addisu-Amare/Health_app/blob/main/multi_functional_health_care/utils/ph2.jpg", use_container_width=True)
 st.sidebar.markdown("<p class='sidebar-text'>The LLM Medical Chatbot is an AI-powered assistant designed to provide instant, accurate, and reliable healthcare insights.</p>", unsafe_allow_html=True)
 
 # Ensure async loop is running
@@ -137,4 +137,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
