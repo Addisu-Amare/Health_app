@@ -8,7 +8,7 @@ import joblib
 from PIL import Image
 
 st.sidebar.markdown("<h2 style='color: #ffffff;'>📌  Description</h2>", unsafe_allow_html=True)
-st.sidebar.image("utils/ph4.png", use_container_width=True)
+st.sidebar.image("utils/ph4.jpg", use_container_width=True)
 st.sidebar.markdown("<p class='sidebar-text'>Our AI-powered Drug Recommendation System uses NLP and cosine similarity to analyze medicines and recommend the most relevant alternatives, ensuring accurate, data-driven, and personalized treatment options.</p>", unsafe_allow_html=True)
 
 
@@ -113,3 +113,4 @@ st.markdown("""
     <p style='text-align: center; color: #7f8c8d;'>Made by <span style='color: orange'>Addisu</span> | 
     <a href='' style='text-decoration:none'>Github</a> © 2026</p>
 """, unsafe_allow_html=True)
+
