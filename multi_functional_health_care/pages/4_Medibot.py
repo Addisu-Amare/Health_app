@@ -4,6 +4,8 @@ import asyncio
 import nest_asyncio
 import streamlit as st
 from dotenv import load_dotenv, find_dotenv
+from pathlib import Path
+
 
 
 # LangChain & Groq Imports
@@ -18,6 +20,15 @@ load_dotenv(find_dotenv())
 nest_asyncio.apply()
 
 st.sidebar.markdown("<h2 style='color: #ffffff;'>📌 Description</h2>", unsafe_allow_html=True)
+image_path = Path(__file__).parent / "utils" / "ph2.jpg"
+
+# Check if the file exists before trying to display it
+if image_path.exists():
+    st.sidebar.image(str(image_path), use_container_width=True)
+else:
+    st.sidebar.warning("Image not found")
+    # Optional: Show the path for debugging
+    st.sidebar.write(f"Looking for image at: {image_path}")
 st.sidebar.image("utils/ph2.jpg", use_container_width=True)
 st.sidebar.markdown("<p class='sidebar-text'>The LLM Medical Chatbot is an AI-powered assistant designed to provide instant, accurate, and reliable healthcare insights.</p>", unsafe_allow_html=True)
 
@@ -126,3 +137,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
