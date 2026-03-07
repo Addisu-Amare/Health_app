@@ -26,7 +26,7 @@ with open('models/third_feature_models/cbe_encoder.pkl', 'rb') as encoder_file:
 data = pd.read_csv('models/third_feature_models/brfss2022_data_wrangling_output.zip', compression='zip')
 data['heart_disease'] = data['heart_disease'].apply(lambda x: 1 if x == 'yes' else 0).astype('int')
 
-icon = Image.open("utils/heart_disease.jpg")
+icon = Image.open("utils/heart_disease.jpeg")
 st.set_page_config(layout='wide', page_title='AI-Powered Heart Disease Assessment | ኤአይ የልብ ሕመም ግምገማ', page_icon=icon)
 st.sidebar.markdown("<h2 style='color: #ffffff;'>📌 Description | መግለጫ</h2>", unsafe_allow_html=True)
 st.sidebar.image("utils/ph5.jpg", use_container_width=True)
@@ -424,4 +424,5 @@ with row10_1:
     st.write("""
         ### Contacts
         [![](https://img.shields.io/badge/GitHub-Follow-informational)](https://github.com/Addisu-Amare)
+
     """)
