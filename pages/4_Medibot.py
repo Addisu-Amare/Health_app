@@ -98,18 +98,26 @@ def load_amharic_embedding_model():
         model_name='xlm-roberta-base'  # Supports Amharic
     )
 
+
+
 @st.cache_resource
+def load_embedding_model():
+    """Load multilingual embedding model that supports Amharic"""
+    return HuggingFaceEmbeddings(
+        model_name='sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2',
+        model_kwargs={'device': 'cpu'},
+        encode_kwargs={'normalize_embeddings': True}
+    )
+
+# Then update your load functions
 def load_vectorstore():
-    """Load the main vectorstore"""
     embedding_model = load_embedding_model()
     try:
         return FAISS.load_local(DB_FAISS_PATH, embedding_model, allow_dangerous_deserialization=True)
     except:
-        # Return empty vectorstore if none exists
         return FAISS.from_texts(["initial"], embedding_model)
 
 def load_user_vectorstore():
-    """Load or create user uploads vectorstore"""
     embedding_model = load_embedding_model()
     user_db_path = os.path.join(USER_UPLOADS_PATH, "user_docs.faiss")
     try:
@@ -119,12 +127,13 @@ def load_user_vectorstore():
 
 def load_amharic_vectorstore():
     """Load or create Amharic-specific vectorstore"""
-    embedding_model = load_amharic_embedding_model()
+    embedding_model = load_embedding_model()  # Use same model
     amharic_db_path = os.path.join(AMHARIC_DB_PATH, "amharic_docs.faiss")
     try:
         return FAISS.load_local(amharic_db_path, embedding_model, allow_dangerous_deserialization=True)
     except:
         return FAISS.from_texts(["initial"], embedding_model)
+
 
 def save_user_vectorstore(vectorstore, is_amharic=False):
     """Save user uploads vectorstore"""
@@ -133,6 +142,9 @@ def save_user_vectorstore(vectorstore, is_amharic=False):
     else:
         save_path = os.path.join(USER_UPLOADS_PATH, "user_docs.faiss")
     vectorstore.save_local(save_path)
+
+
+
 
 def detect_language(text):
     """Detect if text is Amharic or English"""
@@ -518,3 +530,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
