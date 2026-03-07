@@ -1,5 +1,4 @@
-python==3.12
-aiohappyeyeballs==2.6.1
+include the missining library from above aiohappyeyeballs==2.6.1
 aiohttp==3.12.14
 aiosignal==1.4.0
 altair==5.5.0
@@ -83,11 +82,11 @@ safetensors==0.5.3
 scikit-learn==1.6.1
 scipy==1.16.0
 sentence-transformers==5.0.0
+pytesseract==0.3.10
+langdetect==1.0.9
 pypdf2==3.0.1
 pypdf==3.17.4
 pdf2image==1.16.3
-pytesseract==0.3.10
-langdetect==1.0.9
 setuptools==80.9.0
 shap==0.48.0
 six==1.17.0
@@ -116,4 +115,3 @@ urllib3==2.5.0
 watchdog==6.0.0
 yarl==1.20.1
 zstandard==0.23.0
-
