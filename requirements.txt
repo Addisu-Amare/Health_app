@@ -82,6 +82,7 @@ safetensors==0.5.3
 scikit-learn==1.6.1
 scipy==1.16.0
 sentence-transformers==5.0.0
+pytesseract pdf2image PyPDF2 langdetect
 setuptools==80.9.0
 shap==0.48.0
 six==1.17.0
@@ -111,3 +112,4 @@ watchdog==6.0.0
 yarl==1.20.1
 
 zstandard==0.23.0
+
