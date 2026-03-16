@@ -1,6 +1,6 @@
 # Health_app
 
-# 🏥 AI-Powered Healthcare Intelligence Network
+# 🏥 AI Powered multifunctional Healthcare  Hub
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-green.svg)](https://fastapi.tiangolo.com)
