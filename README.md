@@ -163,7 +163,7 @@ MIT © Addisu Amare
 ## 📬 Contact
 
 **Addisu Amare**  
-[GitHub](https://github.com/Addisu-Amare) | [LinkedIn](https://linkedin.com/in/addisu-amare) | [Email](mailto:0941813047estifanos@gmail.com)
+[GitHub](https://github.com/Addisu-Amare) | [LinkedIn](www.linkedin.com/in/addisu-amare-2643ba16a) | [Email](mailto:0941813057estifanos@gmail.com)
 
 ---
 
